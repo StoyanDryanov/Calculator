@@ -59,7 +59,16 @@ opreations.forEach((operation) =>
     if (screen.textContent === "" || firstNum === "") {
       return;
     }
-
+    if (operator !== '') {
+      calculate.dispatchEvent(new Event('click'), () => {
+        if (operator === "" && firstNum === "") {
+          return;
+        }
+        secondNum = screen.textContent;
+        screen.textContent = operate(operator, firstNum, secondNum);
+        firstNum = screen.textContent;
+      });;
+    }
     operator = operation.textContent;
     screen.textContent = "";
   })

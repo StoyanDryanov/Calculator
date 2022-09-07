@@ -80,6 +80,7 @@ calculate.addEventListener("click", () => {
   }
   secondNum = screen.textContent;
   screen.textContent = operate(operator, firstNum, secondNum);
+  operator = '';
   firstNum = screen.textContent;
 });
 
